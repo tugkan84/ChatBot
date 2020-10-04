@@ -50,9 +50,9 @@ module.exports = class Game {
                 break;
             case GameState.DRINKS:
                 if (sInput.toLowerCase().match("white")) {
-                    sReply = "People started running, as if something is happening. Enter the room with the red door or go up the stairs?";
+                    sReply = "People started running, as if something is happening. Enter the room with the Red door or Go up the stairs?";
                     this.stateCur = GameState.ROOM
-                } else if (sInput.toLowerCase().match("red")) { //Red
+                } else if (sInput.toLowerCase().match("red")) { 
                     sReply = "You chose red, your head started to freeze, and suddenly everyone turned to zombies. All the zombies are coming along. Escape the Red room or go Upstairs.";
                     this.stateCur = GameState.ROOM
                 } else {
@@ -64,12 +64,11 @@ module.exports = class Game {
                 if (sInput.toLowerCase().match("red")) {
                     sReply = "There are two cabinets in the room, one Red and the other White. Choose someone to hide?";
                     this.stateCur = GameState.WAKE;
-                } else if (sInput.toLowerCase().match("upstairs")) {
+                } else if (sInput.toLowerCase().match("go") || sInput.toLowerCase().match("going")) {
                     sReply = "There are two rooms upstairs and the zombies go up the stairs. Should you choose a room, the Left room or the Right room?";
                     this.stateCur = GameState.UP
                 } else {
-                    sReply = "You choose to stay and they attacked you. You wake up suddenly from the dream and you are in your car, a tow truck is coming towards you. It was all a dream. or was it not?";
-                    this.stateCur = GameState.WELCOMING
+                    sReply = "Don't hesitate, do something! Going up the stairs or choosing the Red door?";
                 }
                 break;
 
@@ -77,7 +76,7 @@ module.exports = class Game {
                 if (sInput.toLowerCase().match("left")) {
                     sReply = "When you enter the room and close the door, the zombies start to hit the door. Should you go from the two corridors to the red or black one, which one?";
                     this.stateCur = GameState.CORRIDOR;
-                } else if (sInput.toLowerCase().match("right")) { //right 
+                } else if (sInput.toLowerCase().match("right")) { 
                     sReply = "There are 3 doors in front of you, you have to choose one of the doors. Which number will you choose?";
                     this.stateCur = GameState.RIGHT
                 } else {
