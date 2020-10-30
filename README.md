@@ -8,7 +8,9 @@ If you want to work on your local environment :
 You can use git clone https://github.com/tugkan84/ChatBot.git for getting project. 
 
 cd your-folder
+
 npm install # installing the dependencies
+
 npm start # or 'node .'
 
 # I hope you like it
